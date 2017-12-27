@@ -92,7 +92,7 @@ header, nav, section{
 .section__description{
     text-indent: 7%;
     margin: 0;
-    padding-top: 10px;
+    padding: 10px 5px 0 5px;
 }
 /**use in js**/
 .sticked {
@@ -121,6 +121,9 @@ header, nav, section{
     }
     .header{
         border-radius: 5px;
+    }
+    .section__description{
+        padding: 10px 0 0 0;
     }
 }
 @media (min-width: 992px) {
