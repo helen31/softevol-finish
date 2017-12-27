@@ -83,6 +83,11 @@ header, nav, section{
     padding: 10px 15px;
     border-radius: 5px;
     position: sticky;
+
+    position: -webkit-sticky;
+    position: -moz-sticky;
+    position: -ms-sticky;
+    position: -o-sticky;
 }
 .section__title::first-letter{
     font-size: 200%;
