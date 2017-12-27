@@ -82,12 +82,12 @@ header, nav, section{
     background: antiquewhite;
     padding: 10px 15px;
     border-radius: 5px;
-    position: sticky;
 
     position: -webkit-sticky;
     position: -moz-sticky;
     position: -ms-sticky;
     position: -o-sticky;
+    position: sticky;
 }
 .section__title::first-letter{
     font-size: 200%;
