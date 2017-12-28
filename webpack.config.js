@@ -10,6 +10,13 @@ module.exports = {
         filename: 'bundle.js'
     },
     module: {
+        loaders: [
+            {
+                test: /\.js$/,
+                loader: 'webpack-append',
+                query: 'console.log(\'This header sits perfectly at the begining of my file.!\')'
+            }
+        ],
         rules: [
             {
                 test: /\.js$/,

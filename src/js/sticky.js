@@ -33,7 +33,6 @@ class Sticky {
             stickElm.start = $(stickElm).offset().top;
             // during scrolling elements are changing there height because of changing position
             // and we need fix there height
-
             $(stickElm).closest('.section').css('height', 'auto');
             let parentHeigth = $(stickElm).closest('.section').outerHeight(true);
             $(stickElm).closest('.section').css('height', parentHeigth + 'px');
