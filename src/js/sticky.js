@@ -4,15 +4,15 @@ class Sticky {
 
     constructor(selector, stickyOffset) {
         this.$stickElms = $(selector);
-        // if (this.$stickElms.css('position') === 'sticky'
-        //         || this.$stickElms.css('position') === '-webkit-sticky'
-        //         || this.$stickElms.css('position') === '-moz-sticky'
-        //         || this.$stickElms.css('position') === '-ms-sticky'
-        //         || this.$stickElms.css('position') === '-o-sticky'
-        // ) {
-        //     this.$stickElms.css('top', stickyOffset + 'px');
-        //     return;
-        // }
+        if (this.$stickElms.css('position') === 'sticky'
+                || this.$stickElms.css('position') === '-webkit-sticky'
+                || this.$stickElms.css('position') === '-moz-sticky'
+                || this.$stickElms.css('position') === '-ms-sticky'
+                || this.$stickElms.css('position') === '-o-sticky'
+        ) {
+            this.$stickElms.css('top', stickyOffset + 'px');
+            return;
+        }
         this.stickyOffset = stickyOffset;
         $(window).on('scroll', this.setBehavoir.bind(this));
         $(window).on('resize', function() {
