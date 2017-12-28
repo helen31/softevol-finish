@@ -14,13 +14,11 @@ class Sticky {
             return;
         }
         this.stickyOffset = stickyOffset;
-        $(window).on('scroll', this.setBehavoir.bind(this));
-        $(window).on('resize', function() {
-            window.setTimeout(this.init.bind(this), 0);
-        }.bind(this));
         window.setTimeout(function(){
             this.init();
         }.bind(this), 0);
+        $(window).on('scroll', this.setBehavoir.bind(this));
+        $(window).on('resize', this.init.bind(this));
     }
 
     init() {
@@ -29,6 +27,7 @@ class Sticky {
     }
 
     setPositions() {
+        this.$stickElms.removeClass('sticked').removeClass('stucked').removeClass('un-sticked');
         for (let stickElm of this.$stickElms) {
             stickElm.start = $(stickElm).offset().top;
             // during scrolling elements are changing there height because of changing position
