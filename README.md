@@ -16,4 +16,4 @@ npm run dev-server         (to run the project)
 
 And open it in the browser  http://localhost:8080
 
-Quick preview you can see http://htmlpreview.github.io/?https://github.com/helen31/softevol-finish/blob/master/prod/index.html
+For quick preview you should download project to your machine and open a file prod/index.html in the browser.
