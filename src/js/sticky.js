@@ -4,15 +4,15 @@ class Sticky {
 
     constructor(selector, stickyOffset) {
         this.$stickElms = $(selector);
-        if (this.$stickElms.css('position') === 'sticky'
-                || this.$stickElms.css('position') === '-webkit-sticky'
-                || this.$stickElms.css('position') === '-moz-sticky'
-                || this.$stickElms.css('position') === '-ms-sticky'
-                || this.$stickElms.css('position') === '-o-sticky'
-        ) {
-            this.$stickElms.css('top', stickyOffset + 'px');
-            return;
-        }
+        // if (this.$stickElms.css('position') === 'sticky'
+        //         || this.$stickElms.css('position') === '-webkit-sticky'
+        //         || this.$stickElms.css('position') === '-moz-sticky'
+        //         || this.$stickElms.css('position') === '-ms-sticky'
+        //         || this.$stickElms.css('position') === '-o-sticky'
+        // ) {
+        //     this.$stickElms.css('top', stickyOffset + 'px');
+        //     return;
+        // }
         this.stickyOffset = stickyOffset;
         $(window).on('scroll', this.setBehavoir.bind(this));
         $(window).on('resize', function() {
@@ -33,6 +33,8 @@ class Sticky {
             stickElm.start = $(stickElm).offset().top;
             // during scrolling elements are changing there height because of changing position
             // and we need fix there height
+
+            $(stickElm).closest('.section').css('height', 'auto');
             let parentHeigth = $(stickElm).closest('.section').outerHeight(true);
             $(stickElm).closest('.section').css('height', parentHeigth + 'px');
         }
